@@ -4,8 +4,6 @@ import com.example.tfg.model.User;
 import com.example.tfg.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -14,7 +12,7 @@ public class UserController {
 
     private final UserRepository repository = new UserRepository();
 
-    @GetMapping("/users")
+    @GetMapping("/users/all")
     public List<User> getAllUsers() {
         return this.repository.findAll();
     }
