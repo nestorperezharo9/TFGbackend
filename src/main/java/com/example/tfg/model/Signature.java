@@ -2,17 +2,19 @@ package com.example.tfg.model;
 
 import org.mongojack.Id;
 
+import java.util.List;
+
 public class Signature {
 
     @Id
     private String id;
-    private String degreeId;
+    private String courseId;
     private Integer code;
     private String name;
     private Integer plan;
     private Specialty specialty;
     private String school;
-    private Department department;
+    private List<Department> department;
     private SignatureType type;
     private SignatureCharacter character;
     private Integer duration;
@@ -28,12 +30,20 @@ public class Signature {
         this.id = id;
     }
 
-    public String getDegreeId() {
-        return degreeId;
+    public String getCourseId() {
+        return courseId;
     }
 
-    public void setDegreeId(String degreeId) {
-        this.degreeId = degreeId;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public List<Department> getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(List<Department> department) {
+        this.department = department;
     }
 
     public Integer getCode() {
@@ -76,13 +86,6 @@ public class Signature {
         this.school = school;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
 
     public SignatureType getType() {
         return type;
