@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Locale;
-
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -22,8 +20,8 @@ public class TeacherController {
         return this.teacherRepository.findAll();
     }
 
-    @GetMapping("/teachers/{staff}")
-    public List<Teacher> getTeacherByStaff(@PathVariable("staff") String staff) {
-        return this.teacherRepository.findByStaff(staff.toUpperCase(Locale.ROOT));
+    @GetMapping("/teachers/{id}")
+    public Teacher getTeacherById(@PathVariable("id") String id) {
+        return this.teacherRepository.findOne(id);
     }
 }
