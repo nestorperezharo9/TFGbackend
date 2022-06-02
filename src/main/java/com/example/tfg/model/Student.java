@@ -8,6 +8,7 @@ public class Student {
     private String name;
     private String surnames;
     private String email;
+    private Integer telephone;
 
     public String getId() {
         return id;
@@ -39,5 +40,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(Integer telephone) {
+        this.telephone = telephone;
     }
 }

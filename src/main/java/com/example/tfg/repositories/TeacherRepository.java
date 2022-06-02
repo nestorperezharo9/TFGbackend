@@ -12,9 +12,9 @@ public class TeacherRepository extends Repository<Teacher>{
         super("TFG", "teachers", Teacher.class);
     }
 
-    public List<Teacher> findByStaff(String staff) {
+    public List<Teacher> findByPosition(String position) {
         List<Teacher> teachers = new ArrayList<>();
-        super.collection.find(eq("staff", staff)).forEach(teachers::add);
+        super.collection.find(eq("position", position)).forEach(teachers::add);
         return teachers;
     }
 }

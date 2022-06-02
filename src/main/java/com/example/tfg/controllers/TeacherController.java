@@ -24,4 +24,9 @@ public class TeacherController {
     public Teacher getTeacherById(@PathVariable("id") String id) {
         return this.teacherRepository.findOne(id);
     }
+
+    @GetMapping("/teachers/directive")
+    public List<Teacher> getTeacherByPosition() {
+        return this.teacherRepository.findAll();
+    }
 }

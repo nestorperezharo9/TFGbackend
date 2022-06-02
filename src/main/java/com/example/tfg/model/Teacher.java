@@ -16,7 +16,15 @@ public class Teacher {
     private String office;
     private List<String> signatures;
     private Staff staff;
+    private Position position;
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
 
     public String getId() {
         return id;

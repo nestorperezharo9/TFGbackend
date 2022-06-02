@@ -15,7 +15,7 @@ public class StudentController {
     private final StudentRepository studentRepository = new StudentRepository();
 
     @GetMapping("/students/all")
-    public List<Student> getAllTeachers() {
+    public List<Student> getAllStudents() {
             return this.studentRepository.findAll();
         }
 }
