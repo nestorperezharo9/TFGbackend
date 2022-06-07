@@ -8,7 +8,7 @@ public class Room {
     private String id;
     private String name;
     private String description;
-    private String picture;
+    private String image;
     private String location;
     private TypeRoom typeRoom;
 
@@ -37,11 +37,11 @@ public class Room {
     }
 
     public String getPicture() {
-        return picture;
+        return image;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setPicture(String image) {
+        this.image = image;
     }
 
     public String getLocation() {

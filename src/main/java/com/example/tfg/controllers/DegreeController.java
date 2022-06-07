@@ -1,10 +1,9 @@
 package com.example.tfg.controllers;
 
 import com.example.tfg.model.Degree;
+import com.example.tfg.model.Teacher;
 import com.example.tfg.repositories.DegreeRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,5 +16,10 @@ public class DegreeController {
     @GetMapping("/degrees/all")
     public List<Degree> getAllDegrees() {
         return this.repository.findAll();
+    }
+
+    @PostMapping("/degrees/create")
+    public void createDegree(@RequestBody Degree degree) {
+        this.repository.insertOne(degree);
     }
 }

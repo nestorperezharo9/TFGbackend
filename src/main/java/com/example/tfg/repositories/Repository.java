@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
+import static java.util.Collections.reverse;
 
 
 public class Repository<T> {
@@ -33,6 +34,13 @@ public class Repository<T> {
     public List<T> findAll() {
         List<T> documents = new ArrayList<>();
         this.collection.find().forEach(documents::add);
+        return documents;
+    }
+
+    public List<T> findAllReverse() {
+        List<T> documents = new ArrayList<>();
+        this.collection.find().forEach(documents::add);
+        reverse(documents);
         return documents;
     }
 

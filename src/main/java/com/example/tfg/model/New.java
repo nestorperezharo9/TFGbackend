@@ -9,7 +9,7 @@ public class New {
     private String title;
     private String description;
     private String file;
-    private String picture;
+    private String image;
     private String date;
 
     public String getDate() {
@@ -52,11 +52,11 @@ public class New {
         this.file = file;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getImage() {
+        return image;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

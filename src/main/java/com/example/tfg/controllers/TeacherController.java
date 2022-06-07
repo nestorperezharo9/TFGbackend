@@ -1,11 +1,9 @@
 package com.example.tfg.controllers;
 
+import com.example.tfg.model.New;
 import com.example.tfg.model.Teacher;
 import com.example.tfg.repositories.TeacherRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,10 @@ public class TeacherController {
     @GetMapping("/teachers/directive")
     public List<Teacher> getTeacherByPosition() {
         return this.teacherRepository.findAll();
+    }
+
+    @PostMapping("/teachers/teacher/create")
+    public void createTeacher(@RequestBody Teacher teacher) {
+        this.teacherRepository.insertOne(teacher);
     }
 }
