@@ -1,7 +1,6 @@
 package com.example.tfg.controllers;
 
 import com.example.tfg.model.Degree;
-import com.example.tfg.model.Teacher;
 import com.example.tfg.repositories.DegreeRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,4 +21,6 @@ public class DegreeController {
     public void createDegree(@RequestBody Degree degree) {
         this.repository.insertOne(degree);
     }
+
+
 }
