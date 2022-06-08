@@ -18,8 +18,11 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public boolean login(@RequestBody User user) {
-        return this.repository.login(user);
+    public User login(@RequestBody User user) {
+         if (this.repository.login(user)) {
+            return this.repository.findOne(user.getIdentifier());
+        }
+        return null;
     }
     
     @PostMapping("/register")
