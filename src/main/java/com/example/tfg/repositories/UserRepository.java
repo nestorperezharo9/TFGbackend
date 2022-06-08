@@ -17,12 +17,23 @@ public class UserRepository extends Repository<User>{
     }
 
     public boolean login(User user) {
-        return existUser(user.getIdentifier());
+        return existUserPsw(user.getIdentifier(), user.getPassword());
     }
 
     public void deleteUser(String id) {
         if (existUser(id)) {
             this.deleteOne(id);
+        }
+    }
+
+    private boolean existUserPsw(String id, String psw) {
+        List<User> users = this.findAll();
+        boolean name = users.stream().filter(user -> user.getIdentifier().equals(id)).toList().size() != 0;
+        boolean pass = users.stream().filter(user -> user.getPassword().equals(psw)).toList().size() != 0;
+        if(name && pass) {
+            return true;
+        } else {
+            return false;
         }
     }
 
