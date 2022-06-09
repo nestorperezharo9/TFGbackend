@@ -4,6 +4,9 @@ import com.example.tfg.model.User;
 
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
+
 public class UserRepository extends Repository<User>{
 
     public UserRepository() {
@@ -27,14 +30,8 @@ public class UserRepository extends Repository<User>{
     }
 
     private boolean existUserPsw(String id, String psw) {
-        List<User> users = this.findAll();
-        boolean name = users.stream().filter(user -> user.getIdentifier().equals(id)).toList().size() != 0;
-        boolean pass = users.stream().filter(user -> user.getPassword().equals(psw)).toList().size() != 0;
-        if(name && pass) {
-            return true;
-        } else {
-            return false;
-        }
+        User user = this.collection.find(and(eq("_id", id), eq("password", psw))).first();
+        return user != null;
     }
 
     private boolean existUser(String id) {

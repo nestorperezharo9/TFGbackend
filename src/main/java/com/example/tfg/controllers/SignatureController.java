@@ -41,4 +41,9 @@ public class SignatureController {
     public void createSignatureDoctorate(@RequestBody Signature signature) {
         this.signatureRepository.insertOne(signature);
     }
+
+    @GetMapping("/signatures/delete/{id}")
+    public void deleteSignature(@PathVariable("id") String id) {
+        this.signatureRepository.deleteOne(id);
+    }
 }

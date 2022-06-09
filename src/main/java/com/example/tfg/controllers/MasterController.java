@@ -22,5 +22,10 @@ public class MasterController {
     public void createMaster(@RequestBody Master master) {
         this.repository.insertOne(master);
     }
+
+    @GetMapping("/masters/delete/{id}")
+    public void deleteTeacher(@PathVariable("id") String id) {
+        this.repository.deleteOne(id);
+    }
 }
 

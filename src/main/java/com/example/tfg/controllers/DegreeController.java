@@ -22,5 +22,9 @@ public class DegreeController {
         this.repository.insertOne(degree);
     }
 
+    @GetMapping("/degrees/delete/{id}")
+    public void deleteTeacher(@PathVariable("id") String id) {
+        this.repository.deleteOne(id);
+    }
 
 }

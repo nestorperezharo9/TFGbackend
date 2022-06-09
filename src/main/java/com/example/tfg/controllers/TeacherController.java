@@ -32,4 +32,10 @@ public class TeacherController {
     public void createTeacher(@RequestBody Teacher teacher) {
         this.teacherRepository.insertOne(teacher);
     }
+
+    @GetMapping("/teachers/delete/{id}")
+    public void deleteTeacher(@PathVariable("id") String id) {
+        this.teacherRepository.deleteOne(id);
+    }
+
 }

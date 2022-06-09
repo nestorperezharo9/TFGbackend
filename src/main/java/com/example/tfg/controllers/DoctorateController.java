@@ -22,4 +22,10 @@ public class DoctorateController {
     public void createDoctorates(@RequestBody Doctorate doctorate) {
         this.repository.insertOne(doctorate);
     }
+
+    @GetMapping("/doctorates/delete/{id}")
+    public void deleteTeacher(@PathVariable("id") String id) {
+        this.repository.deleteOne(id);
+    }
+
 }
